@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Electronic Magazine</title>
+<style type="text/css">
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: cyan;
+}
+</style>
+<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+</head>
+<body>
+<h2>Electronic Magazine</h2>
+<hr>
+<p th:text=" ${message} + '!'" /><br>
+
+<a href="/recentmagazine">Recent Magazine</a>
+<a href="/newmagazine">Creat New Magazine</a>
+
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Create new Magazine</title>
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+.dash{
+        border: 1px solid #008CBA;
+        width: 360px;
+        height: 0px;
+
+}
+ 
+strong {
+    font-weight: 700;
+    background-color: yellow;
+}
+ 
+p {
+    font-family: sans-serif;
+    font-size: medium;
+}
+hr {
+  border-top: 1px solid cyan;
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+table {
+  
+}
+th, td {
+  font-weight: unset;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: cyan;
+}
+.button {
+  background-color: #008CBA; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.column {
+  float: left;
+  width: 33.33%;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column"  ></div>
+  <div class="column" align="center"><h2>New Magazine</h2>
+	<div class="dash"></div>
+	
+    <form action="#" th:action="@{/newmagazinesubmit}" th:object="${magazine}" method="post">
+    	<table >
+    	<tr>
+        <p><td>Magazine Name:</td> <td> <input type="text" th:field="*{mname}" required="required"/></td></p></tr>
+        <tr><p><td>Magazine Type: </td> <td> <input type="text" th:field="*{mtype}" required="required"/></td></p></tr>
+       <tr> <p><td>Magazine Category: </td> <td><input type="text" th:field="*{mcategory}" required="required"/></td></p></tr>
+        <tr><p><td>Magazine Language: </td> <td><input type="text" th:field="*{mlanguage}" required="required"/></td></p>   </tr>    
+        <tr><p><td>Magazine Date: </td> <td><input type="text" th:field="*{mdate}" required="required"/></td></p>   </tr>
+        <tr align="center"><p><td colspan="2" ><input class="button" type="submit" value="Submit" /> <input class="button" type="reset" value="Reset" /></td></p></tr>
+        
+        </table>
+    </form>
+    <div class="dash"></div>
+    <br>
+    <a href="/">Back</a></div>
+  <div class="column"></div>
+</div>
+
+</body>
+</html>
